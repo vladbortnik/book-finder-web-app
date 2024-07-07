@@ -1,0 +1,25 @@
+# Ignore Python cache files
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+*.pyc.so
+
+# Ignore git and version control files
+.git
+.gitignore
+
+# Ignore all log files
+*.log
+
+# Ignore all .env files
+*.env
+.python-version
+
+# Ignore OS generated files
+.DS_Store
+ehthumbs.db
+Thumbs.db
+
+# Ignore instances folder
+instances/
