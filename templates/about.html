@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %} About | Book Finder {% endblock %}
+
+{% block content %}
+    <h1 class="cCont">About the Website</h1>
+    <h3>Welcome to our platform! The project proudly initiated by a Brooklyn College alumnus.</h3>
+    <br>
+    <h5><b>Our Mission:</b></h5>
+        <ul style="font-size: large;">
+            <li>We understand that new textbooks can be prohibitively expensive, leading many students to opt for used ones each semester. Unfortunately, book resellers often exploit this demand by overpricing even second-hand books.</li>
+            <li>Our website aims to change that. We provide a direct marketplace where students can buy and sell textbooks to each other, eliminating the need for third-party resellers and ensuring fair prices.</li>
+            <li>Join us in creating a more affordable and student-friendly textbook exchange community.</li>
+        </ul>
+
+    <div class="container">
+        <img class="img-fluid" id="brooklyn-college-img" src="{{ url_for('static', filename='Brooklyn-college.jpg') }}" alt="Brooklyn College Image">
+    </div>
+{% endblock %}
