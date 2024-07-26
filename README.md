@@ -110,6 +110,6 @@ This application demonstrates a robust and comprehensive use of Flask and its ex
     $ docker exec -it <container: name || id> /bin/bash
     ```
 
-    `-i` -- interactive mode
-    `-t` -- TTY
+    - `-i` -- interactive mode
+    - `-t` -- TTY
 ---
