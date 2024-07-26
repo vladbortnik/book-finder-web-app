@@ -96,7 +96,8 @@ This application demonstrates a robust and comprehensive use of Flask and its ex
     $ docker run -d -p 5001:5001 --name book-finder-web-app --restart unless-stopped -e SECRET_KEY='your_generated_secret_key' book-finder-web-app
     ```
 
-    `-d` runs the container in detached mode (in the background)
+    `-d` runs the container in detached mode (in the background)  
+    
     `-p 5001:5001` maps port `5001` on the host to port `5001` in the container
     `--name book-finder-web-app` names the container
     `--restart unless-stopped` ensures the container restarts automatically unless it is explicitly stopped
