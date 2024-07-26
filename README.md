@@ -87,6 +87,7 @@ This application demonstrates a robust and comprehensive use of Flask and its ex
     On local machine:
     ```bash
     Generate a Secret Key:
+
     >>> import secrets
     >>> print(secrets.token_hex(16))
     ```
@@ -101,7 +102,6 @@ This application demonstrates a robust and comprehensive use of Flask and its ex
     - `--name book-finder-web-app` names the container
     - `--restart unless-stopped` ensures the container restarts automatically unless it is explicitly stopped
     - `book-finder-web-app` is the name of the image to run
-    <br/>
 
 3. **Access the running container:**
 
