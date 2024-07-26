@@ -80,7 +80,6 @@ This application demonstrates a robust and comprehensive use of Flask and its ex
     ```
 
     This command builds a Docker image from your Dockerfile and tags it (`-t`) as `book-finder-web-app`. The `.` at the end of the command tells Docker to look for the Dockerfile in the current directory.
-    <br/>
 
 2. **Run the Docker container:**  
 
