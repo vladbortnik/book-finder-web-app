@@ -13,11 +13,9 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 # Make port 5000 available to the world outside this container
 EXPOSE 5001
 
-# Set environment variables required by Flask command
-ENV FLASK_APP=app.py
-ENV FLASK_RUN_HOST=0.0.0.0
-ENV FLASK_ENV=development
-ENV FLASK_DEBUG=1
+# Set environment variables (optional)
+ENV FLASK_ENV=production
+ENV FLASK_DEBUG=0
 
 # Run the command to start Flask server
-CMD ["flask", "run", "--host=0.0.0.0", "--port=5001"]
+CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5001", "app:app"]

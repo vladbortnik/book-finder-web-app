@@ -17,7 +17,7 @@ Join us in creating a more affordable and student-friendly textbook exchange com
 
 ## **Implementation:**
 
-This Flask application is a Simple, yet, Comprehensive Web App for managing User Accounts and Posting Book-Related content. It allows users to Sign up, Log in, Create, Read, Update, and Delete posts about books, including Uploading Book picture Files. The application is Containerized using Docker, ensuring a Consistent and Isolated Runtime Environment.
+This Flask application is a Simple, yet, Comprehensive Web App for managing User Accounts and Posting Book-Related content. It allows users to Sign up, Log in, Create, Read, Update, and Delete posts about books, including Uploading Book picture Files. The application is Containerized using Docker, ensuring a Consistent and Isolated Runtime Environment. For production deployment, the application is served using Gunicorn, a Python WSGI HTTP Server, which provides a robust and efficient way to handle multiple requests.
 
 1. **User Authentication and Management**: 
    - Utilizes Flask-Login for handling User Authentication, Session Management, and Protecting Routes to ensure only Authenticated Users can access certain pages.
@@ -55,11 +55,15 @@ This Flask application is a Simple, yet, Comprehensive Web App for managing User
    - The application is containerized using Docker, ensuring Consistent Deployment across Different Environments.
    - Docker simplifies the process of Managing Dependencies and Configurations, providing an Isolated and Stable Environment for the application.
 
-10. **Security**:
-    - **Password Encryption**: Utilizes Flask-Bcrypt to hash and securely store user passwords.
-    - **Environment Variables**: Manages sensitive information such as the secret key using environment variables to avoid hardcoding credentials.
-    - **Access Control**: Protects routes to ensure that only Authenticated Users can access certain pages and perform specific actions.
-    - **CSRF Protection**: Uses Flask-WTF to include CSRF (Cross-Site Request Forgery) Tokens in Forms, preventing Unauthorized Actions from being executed.
+10. **Production Deployment with Gunicorn**:
+      - The application is served using Gunicorn, which allows for handling multiple requests concurrently, improving performance and reliability in a production environment.
+      - Gunicorn can be easily configured to work with various worker types and settings to optimize performance based on the deployment needs.
+
+11. **Security**:
+      - **Password Encryption**: Utilizes Flask-Bcrypt to hash and securely store user passwords.
+      - **Environment Variables**: Manages sensitive information such as the secret key using environment variables to avoid hardcoding credentials.
+      - **Access Control**: Protects routes to ensure that only Authenticated Users can access certain pages and perform specific actions.
+      - **CSRF Protection**: Uses Flask-WTF to include CSRF (Cross-Site Request Forgery) Tokens in Forms, preventing Unauthorized Actions from being executed.
 
 This application demonstrates a robust and comprehensive use of Flask and its extensions to build a scalable web application with User Authentication, Form Handling, File Uploads, RESTful API endpoints, and Database Operations, all within a Containerized Environment. Emphasis on Security ensures that User Data is Protected through various mechanisms, making the Application Reliable and Secure.
 
@@ -75,14 +79,15 @@ This application demonstrates a robust and comprehensive use of Flask and its ex
     docker build -t book-finder-web-app .
     ```
 
-    This command builds a Docker image from your Dockerfile and tags it (`-t`) as `book-finder-web-app`. The `.` at the end of the command tells Docker to look for the Dockerfile in the current directory.  
+    This command builds a Docker image from your Dockerfile and tags it (`-t`) as `book-finder-web-app`. The `.` at the end of the command tells Docker to look for the Dockerfile in the current directory.
+    <br/>
 
-2. **Run the Docker container:**
-
-    On your local machine, open a Python shell and run:
+2. **Run the Docker container:**<br/>
+    On local machine:
     ```bash
-    > import secrets
-    > print(secrets.token_hex(16))
+    Generate a Secret Key:
+    >>> import secrets
+    >>> print(secrets.token_hex(16))
     ```
 
     On server:
@@ -95,6 +100,7 @@ This application demonstrates a robust and comprehensive use of Flask and its ex
     `--name book-finder-web-app` names the container
     `--restart unless-stopped` ensures the container restarts automatically unless it is explicitly stopped
     `book-finder-web-app` is the name of the image to run
+    <br/>
 
 3. **Access the running container:**
 
