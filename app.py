@@ -13,8 +13,12 @@ from flask_bcrypt import Bcrypt
 # configure app
 app = Flask(__name__)
 
-# If run inside of a Docker container pass this EVN VARIABLE this way:
-# $ docker run -d -p 5000:5000 --name my_flask_app --restart unless-stopped -e SECRET_KEY='your_generated_secret_key' my_flask_app
+# Generate SECRET_KEY locally:
+# >>> import secrets
+# >>> print(secrets.token_hex(16))
+# 
+# Then pass it into the Container:
+# $ docker run -d -p 5001:5001 --name book-finder-web-app --restart unless-stopped -e SECRET_KEY='your_generated_secret_key' book-finder-web-app
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'default_secret_key')
 
 # ======= DEFINE FORMS =======
