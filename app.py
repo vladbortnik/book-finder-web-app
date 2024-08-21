@@ -19,7 +19,7 @@ app = Flask(__name__)
 # 
 # Then pass it into the Container:
 # $ docker run -d -p 5001:5001 --name book-finder-web-app --restart unless-stopped -e SECRET_KEY='your_generated_secret_key' book-finder-web-app
-app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'default_secret_key')
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 
 # ======= DEFINE FORMS =======
 class SignUpForm(FlaskForm):
