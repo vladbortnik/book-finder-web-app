@@ -23,20 +23,13 @@ app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 
 # ======= DEFINE FORMS =======
 class SignUpForm(FlaskForm):
-    firstName = StringField('First name:', validators=[
-        DataRequired(), Length(min=2, max=30)])
-    lastName = StringField('Last name:', validators=[
-        DataRequired(), Length(min=2, max=30)])
-    username = StringField('Username:', validators=[
-        DataRequired(), Length(min=2, max=20)])
-    email = StringField('Email address:', validators=[
-        DataRequired(), Email()])
-    phone = StringField('Phone number:', validators=[
-        DataRequired(), Length(max=20)])
-    password = PasswordField('Password:', validators=[
-        DataRequired()])
-    confirmPassword = PasswordField('Confirm password:', validators=[
-        DataRequired(), EqualTo('password')])
+    firstName = StringField('First name:', validators=[DataRequired(), Length(min=2, max=30)])
+    lastName = StringField('Last name:', validators=[DataRequired(), Length(min=2, max=30)])
+    username = StringField('Username:', validators=[DataRequired(), Length(min=2, max=20)])
+    email = StringField('Email address:', validators=[DataRequired(), Email()])
+    phone = StringField('Phone number:', validators=[DataRequired(), Length(max=20)])
+    password = PasswordField('Password:', validators=[DataRequired()])
+    confirmPassword = PasswordField('Confirm password:', validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Sign up')
 
     def validate_username(self, username):
@@ -52,10 +45,8 @@ class SignUpForm(FlaskForm):
                 'That email address is taken. Please choose a different one.')
 
 class LogInForm(FlaskForm):
-    email = StringField('Email address:', validators=[
-        DataRequired(), Email()])
-    password = PasswordField('Password:', validators=[
-        DataRequired()])
+    email = StringField('Email address:', validators=[DataRequired(), Email()])
+    password = PasswordField('Password:', validators=[DataRequired()])
     remember = BooleanField('Remember me')
     submit = SubmitField('Log in')
 
@@ -63,8 +54,7 @@ class PostForm(FlaskForm):
     title = StringField('Book Title:', validators=[DataRequired()])
     department = StringField('Department:', validators=[DataRequired()])
     content = TextAreaField('Author Name & Edition:', validators=[DataRequired()])
-    picture = FileField('Update book picture:', validators=[
-        FileAllowed(['jpg', 'jpeg', 'png'])])
+    picture = FileField('Update book picture:', validators=[FileAllowed(['jpg', 'jpeg', 'png'])])
     submit = SubmitField('Post')
 
 # ======= CONFIGURE DATABASE =======
