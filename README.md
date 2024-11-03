@@ -17,23 +17,23 @@ Join us in creating a more affordable and student-friendly textbook exchange com
 
 ## **Implementation:**
 
-This Flask application is a Simple, yet, Comprehensive Web App for managing User Accounts and Posting Book-Related content. It allows users to Sign up, Log in, Create, Read, Update, and Delete posts about books, including Uploading Book picture Files. The application is Containerized using Docker, ensuring a Consistent and Isolated Runtime Environment. For production deployment, the application is served using Gunicorn, a Python WSGI HTTP Server, which provides a robust and efficient way to handle multiple requests.
+Simple, yet, comprehensive `Flask Web App` for managing User Accounts and Posting Book-Related content. The app is containerized using `Docker`, ensuring a Consistent and Isolated Runtime Environment. For production deployment, the app is served using `Gunicorn`, (a Python WSGI HTTP Server), which provides a robust and efficient way to handle multiple requests.
 
 1. **User Authentication and Management**: 
-   - Utilizes Flask-Login for handling User Authentication, Session Management, and Protecting Routes to ensure only Authenticated Users can access certain pages.
-   - Users can Sign up & Log in, with Passwords Securely Encrypted using Flask-Bcrypt before its Hash being Stored in the Database.
+   - Utilizes `Flask-Login` for handling User Authentication, Session Management, and Protecting Routes to ensure only Authenticated Users can access certain pages.
+   - Users can Sign up & Log in, with Passwords Securely Encrypted using `Flask-Bcrypt` before its Hash being Stored in the Database.
 
 2. **Form Handling**:
-   - Uses Flask-WTF to create forms for User Sign-up, Log in, and Post creation.
+   - Uses `Flask-WTF` to create forms for User Sign-up, Log in, and Post creation.
    - Includes Validations to ensure Data Integrity, such as checking if a Username or Email already exists in the Database during sign-up.
 
 3. **Database Models**:
-   - SQLAlchemy is used as the ORM to define `User` and `Post` models, representing the application's Data Structure.
-   - The `User` model stores user information, while the `Post` model stores information about book posts, including title, department, content, and associated image file names.
+   - `SQLAlchemy` is used as the ORM to define User and Post models, representing the application's Data Structure.
+   - The User model stores user information, while the Post model stores information about book posts, including title, department, content, and associated image file names.
 
 4. **File Uploads**:
    - Implements file handling to allow users to upload images for their book posts.
-   - Generates a Unique Filename for each upload to avoid conflicts and stores the files in a designated directory on the server.
+   - Generates a Unique Filename for each upload to avoid conflicts and stores the files in a designated directory on the Server.
 
 5. **Web Pages and Routing**:
    - Defines routes for various pages like the home page, about page, account page, and individual post pages.
@@ -41,31 +41,31 @@ This Flask application is a Simple, yet, Comprehensive Web App for managing User
    - **Responsive Design**: Implements Bootstrap to ensure responsive design, making the web application accessible and user-friendly across various devices and screen sizes.
 
 6. **Database Initialization**:
-   - At the start, it checks for the Existence of the Database and Tables, creating them if they don't exist, using SQLAlchemy's `create_all` method within the Flask application context.
+   - At the start, it checks for the Existence of the Database and Tables, creating them if they don't exist, using `SQLAlchemy's` `create_all` method within the `Flask` app context.
 
 7. **RESTful API**:
    - Follows RESTful principles, making it Easy to Integrate with other Services and Applications.
-   - Endpoints are designed to handle CRUD (Create, Read, Update, Delete) operations for User Accounts and Book Posts.
+   - Endpoints are designed to handle `CRUD` (Create, Read, Update, Delete) operations for User Accounts and Book Posts.
 
 8. **Configuration**:
-   - Sets up necessary configurations for the Flask application, including the Secret Key for Session Management and Database URI.
-   - Customizes the Login View and manages Sensitive Information using Environment Variables.
+   - Sets up necessary configurations for the `Flask` application, including the Secret Key for `Session Management` and Database URI.
+   - Customizes the Login View and manages Sensitive Information using `Environment Variables`.
 
 9. **Containerization**:
-   - The application is containerized using Docker, ensuring Consistent Deployment across Different Environments.
-   - Docker simplifies the process of Managing Dependencies and Configurations, providing an Isolated and Stable Environment for the application.
+   - The application is containerized using `Docker`, ensuring Consistent Deployment across Different Environments.
+   - `Docker` simplifies the process of Managing Dependencies and Configurations, providing an Isolated and Stable Environment for the application.
 
 10. **Production Deployment with Gunicorn**:
-      - The application is served using Gunicorn, which allows for handling multiple requests concurrently, improving performance and reliability in a production environment.
-      - Gunicorn can be easily configured to work with various worker types and settings to optimize performance based on the deployment needs.
+      - The app is served using `Gunicorn`, which allows for handling multiple requests concurrently, improving performance and reliability in a production environment.
+      - `Gunicorn` can be easily configured to work with various worker types and settings to optimize performance based on the deployment needs.
 
 11. **Security**:
-      - **Password Encryption**: Utilizes Flask-Bcrypt to hash and securely store user passwords.
+      - **Password Encryption**: Utilizes `Flask-Bcrypt` to hash and securely store user passwords.
       - **Environment Variables**: Manages sensitive information such as the secret key using environment variables to avoid hardcoding credentials.
       - **Access Control**: Protects routes to ensure that only Authenticated Users can access certain pages and perform specific actions.
-      - **CSRF Protection**: Uses Flask-WTF to include CSRF (Cross-Site Request Forgery) Tokens in Forms, preventing Unauthorized Actions from being executed.
+      - **CSRF Protection**: Uses `Flask-WTF` to include `CSRF` (Cross-Site Request Forgery) Tokens in Forms, preventing Unauthorized Actions from being executed.
 
-This application demonstrates a robust and comprehensive use of Flask and its extensions to build a scalable web application with User Authentication, Form Handling, File Uploads, RESTful API endpoints, and Database Operations, all within a Containerized Environment. Emphasis on Security ensures that User Data is Protected through various mechanisms, making the Application Reliable and Secure.
+The App demonstrates a robust and comprehensive use of `Flask` and its extensions to build a scalable Web App with `User Authentication`, `Form Handling`, `File Uploads`, `RESTful API` endpoints, and `Database Operations`, all within a Containerized Environment. Emphasis on `Security` ensures that User Data is Protected through various mechanisms, making the Application Reliable and Secure.
 
 ---
 
