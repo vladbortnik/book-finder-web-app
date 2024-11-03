@@ -17,14 +17,14 @@ Join us in creating a more affordable and student-friendly textbook exchange com
 
 ## **Implementation:**
 
-Simple, yet, comprehensive **`Flask Web App`** for managing User Accounts and Posting Book-Related content. The app is containerized using `Docker`, ensuring a Consistent and Isolated Runtime Environment. For production deployment, the app is served using `Gunicorn`, (a Python WSGI HTTP Server), which provides a robust and efficient way to handle multiple requests.
+Simple, yet, comprehensive **`Flask Web App`** for managing User Accounts and Posting Book-Related content. The app is containerized using **`Docker`**, ensuring a Consistent and Isolated Runtime Environment. For production deployment, the app is served using **`Gunicorn`**, (a Python WSGI HTTP Server), which provides a robust and efficient way to handle multiple requests.
 
 1. **User Authentication and Management**: 
-   - Utilizes `Flask-Login` for handling User Authentication, Session Management, and Protecting Routes to ensure only Authenticated Users can access certain pages.
-   - Users can Sign up & Log in, with Passwords Securely Encrypted using `Flask-Bcrypt` before its Hash being Stored in the Database.
+   - Utilizes **`Flask-Login`** for handling User Authentication, Session Management, and Protecting Routes to ensure only Authenticated Users can access certain pages.
+   - Users can Sign up & Log in, with Passwords Securely Encrypted using **`Flask-Bcrypt`** before its Hash being Stored in the Database.
 
 2. **Form Handling**:
-   - Uses `Flask-WTF` to create forms for User Sign-up, Log in, and Post creation.
+   - Uses **`Flask-WTF`** to create forms for User Sign-up, Log in, and Post creation.
    - Includes Validations to ensure Data Integrity, such as checking if a Username or Email already exists in the Database during sign-up.
 
 3. **Database Models**:
