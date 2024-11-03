@@ -20,52 +20,53 @@ Join us in creating a more affordable and student-friendly textbook exchange com
 Simple, yet, comprehensive **`Flask Web App`** for managing User Accounts and Posting Book-Related content. The app is containerized using **`Docker`**, ensuring a Consistent and Isolated Runtime Environment. For production deployment, the app is served using **`Gunicorn`**, (a Python WSGI HTTP Server), which provides a robust and efficient way to handle multiple requests.
 
 1. **User Authentication and Management**: 
-   - Utilizes **`Flask-Login`** for handling User Authentication, Session Management, and Protecting Routes to ensure only Authenticated Users can access certain pages.
-   - Users can Sign up & Log in, with Passwords Securely Encrypted using **`Flask-Bcrypt`** before its Hash being Stored in the Database.
+   - Utilizes **`Flask-Login`** for handling *`User Authentication`*, *`Session Management`*, and *`Protecting Routes`* to ensure only Authenticated Users can access certain pages.
+   - Users can securely Sign up & Log in, protected by *`Password Hashing`* with **`Flask-Bcrypt`**. 
 
 2. **Form Handling**:
    - Uses **`Flask-WTF`** to create forms for User Sign-up, Log in, and Post creation.
-   - Includes Validations to ensure Data Integrity, such as checking if a Username or Email already exists in the Database during sign-up.
+   - Includes **`WTForms Validators`** to ensure *`Data Integrity`*.
 
 3. **Database Models**:
-   - `SQLAlchemy` is used as the ORM to define User and Post models, representing the application's Data Structure.
-   - The User model stores user information, while the Post model stores information about book posts, including title, department, content, and associated image file names.
+   - **`SQLAlchemy`** is used as the ORM to define User and Post models, representing the application's Data Structure.
+   - The *`User Model`* stores user information, while the *`Post Model`* stores information about book posts and associated image files.
 
 4. **File Uploads**:
-   - Implements file handling to allow users to upload images for their book posts.
-   - Generates a Unique Filename for each upload to avoid conflicts and stores the files in a designated directory on the Server.
+   - Implements **`File Handling`** to allow users to upload images for their book posts.
+   - Generates a *`Unique Filename`* for each upload (to avoid conflicts) and *`Stores Files`* on the Server.
 
 5. **Web Pages and Routing**:
-   - Defines routes for various pages like the home page, about page, account page, and individual post pages.
-   - Uses Flask's `render_template` to serve HTML templates, passing data from the server, such as user information and posts, to the templates.
-   - **Responsive Design**: Implements Bootstrap to ensure responsive design, making the web application accessible and user-friendly across various devices and screen sizes.
+   - Defines *`Routes`* for various pages, like *Home*, *About*, *Account*, etc.
+   - Uses **`Jinja2`** Template Engine to render HTML templates, dynamically passing data from the Server to templates.
+   - *`Responsive Design`* implemented with **`Bootstrap 4`** makes UI responsive and user-friendly across various devices and screen sizes.
 
-6. **Database Initialization**:
-   - At the start, it checks for the Existence of the Database and Tables, creating them if they don't exist, using `SQLAlchemy's` `create_all` method within the `Flask` app context.
+6. **Database**:
+   - Utilizes **`SQLite`** for robust data storage.
+   - Initializes *DB* and creates *Tables* using **`SQLAlchemy`** *`create_all`* method within the *Flask App Context*.
 
 7. **RESTful API**:
-   - Follows RESTful principles, making it Easy to Integrate with other Services and Applications.
-   - Endpoints are designed to handle `CRUD` (Create, Read, Update, Delete) operations for User Accounts and Book Posts.
+   - Follows **`RESTful Principles`**, making it easy to Integrate with other Services and Applications.
+   - *`Endpoints`* are designed to handle **`CRUD`** (*Create, Read, Update, Delete*) operations for *User Accounts* and *Book Posts*.
 
 8. **Configuration**:
-   - Sets up necessary configurations for the `Flask` application, including the Secret Key for `Session Management` and Database URI.
-   - Customizes the Login View and manages Sensitive Information using `Environment Variables`.
+   - Sets up necessary configurations for the *Flask App*, including the *Secret Key* for **`Session Management`** and *Database URI*.
+   - Customizes the *Login View* and manages *Sensitive Information* using **`Environment Variables`**.
 
 9. **Containerization**:
-   - The application is containerized using `Docker`, ensuring Consistent Deployment across Different Environments.
-   - `Docker` simplifies the process of Managing Dependencies and Configurations, providing an Isolated and Stable Environment for the application.
+   - **`Docker`** simplifies the process of *`Managing Dependencies`* and *`Configuration`*, providing an *`Isolated and Stable Environment`* for the application.
+   - The application is containerized using **`Dockerfile`**, ensuring *`Consistent Deployment`* across *Different Environments*.
 
 10. **Production Deployment with Gunicorn**:
-      - The app is served using `Gunicorn`, which allows for handling multiple requests concurrently, improving performance and reliability in a production environment.
-      - `Gunicorn` can be easily configured to work with various worker types and settings to optimize performance based on the deployment needs.
+      - The app is served using **`Gunicorn`**, which allows multiple *`Requests Concurrency`*, improving *Performance* and *Reliability* in a *`Production Environment`*.
+      - **`Gunicorn`** can be easily configured to work with various worker types and settings to *`Optimize Performance`* based on the deployment needs.
 
 11. **Security**:
-      - **Password Encryption**: Utilizes `Flask-Bcrypt` to hash and securely store user passwords.
-      - **Environment Variables**: Manages sensitive information such as the secret key using environment variables to avoid hardcoding credentials.
-      - **Access Control**: Protects routes to ensure that only Authenticated Users can access certain pages and perform specific actions.
-      - **CSRF Protection**: Uses `Flask-WTF` to include `CSRF` (Cross-Site Request Forgery) Tokens in Forms, preventing Unauthorized Actions from being executed.
+      - **Password Encryption**: Utilizes **`Flask-Bcrypt`** to *`Hash`* and *`Securely Store`* user *Passwords*.
+      - **Environment Variables**: Manages *Sensitive Information* (such as the secret key) using **`Environment Variables`** to *Avoid Hardcoding* credentials.
+      - **Access Control**: Protects routes with **`Flask-Login`** to ensure only *`Authenticated Users`* can access certain pages and perform specific actions.
+      - **CSRF Protection**: Uses **`Flask-WTF`** to include *`CSRF`* (*Cross-Site Request Forgery*) *Tokens* in forms, *`Preventing Unauthorized Actions`* from being executed.
 
-The App demonstrates a robust and comprehensive use of `Flask` and its extensions to build a scalable Web App with `User Authentication`, `Form Handling`, `File Uploads`, `RESTful API` endpoints, and `Database Operations`, all within a Containerized Environment. Emphasis on `Security` ensures that User Data is Protected through various mechanisms, making the Application Reliable and Secure.
+The App demonstrates a robust and comprehensive use of *`Flask`* and its *extensions* to build a scalable Web App with **`User Authentication`**, **`Form Handling`**, **`File Uploads`**, **`RESTful API`** endpoints, and **`Database Operations`**, all within a **`Containerized Environment`**. Emphasis on *`Security`* ensures that *User Data is Protected* through various mechanisms, making the *Application* *`Reliable and Secure`*.
 
 ---
 
