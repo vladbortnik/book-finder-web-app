@@ -17,7 +17,7 @@ Join us in creating a more affordable and student-friendly textbook exchange com
 
 ## **Implementation:**
 
-Simple, yet, comprehensive `Flask Web App` for managing User Accounts and Posting Book-Related content. The app is containerized using `Docker`, ensuring a Consistent and Isolated Runtime Environment. For production deployment, the app is served using `Gunicorn`, (a Python WSGI HTTP Server), which provides a robust and efficient way to handle multiple requests.
+Simple, yet, comprehensive **`Flask Web App`** for managing User Accounts and Posting Book-Related content. The app is containerized using `Docker`, ensuring a Consistent and Isolated Runtime Environment. For production deployment, the app is served using `Gunicorn`, (a Python WSGI HTTP Server), which provides a robust and efficient way to handle multiple requests.
 
 1. **User Authentication and Management**: 
    - Utilizes `Flask-Login` for handling User Authentication, Session Management, and Protecting Routes to ensure only Authenticated Users can access certain pages.
