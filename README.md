@@ -64,6 +64,8 @@ This Flask application is a Simple, yet, Comprehensive Web App for managing User
       - **Environment Variables**: Manages sensitive information such as the secret key using environment variables to avoid hardcoding credentials.
       - **Access Control**: Protects routes to ensure that only Authenticated Users can access certain pages and perform specific actions.
       - **CSRF Protection**: Uses Flask-WTF to include CSRF (Cross-Site Request Forgery) Tokens in Forms, preventing Unauthorized Actions from being executed.
+   
+<br/>
 
 This application demonstrates a robust and comprehensive use of Flask and its extensions to build a scalable web application with User Authentication, Form Handling, File Uploads, RESTful API endpoints, and Database Operations, all within a Containerized Environment. Emphasis on Security ensures that User Data is Protected through various mechanisms, making the Application Reliable and Secure.
 
