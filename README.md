@@ -2,6 +2,8 @@
 
 Welcome to our platform! This project was proudly initiated by a Brooklyn College alumnus.
 
+**Live**: [bookfinder](http://bookfinder.vladbortnik.dev)
+
 ## Our Mission
 
 Textbooks can be prohibitively expensive, forcing many students to opt for used ones each semester. Unfortunately, book resellers often exploit this demand by overpricing even second-hand books.
@@ -17,7 +19,7 @@ Join us in creating a more affordable and student-friendly textbook exchange com
 
 ## **Implementation:**
 
-This Flask application is a Simple, yet, Comprehensive Web App for managing User Accounts and Posting Book-Related content. It allows users to Sign up, Log in, Create, Read, Update, and Delete posts about books, including Uploading Book picture Files. The application is Containerized using Docker, ensuring a Consistent and Isolated Runtime Environment. For production deployment, the application is served using Gunicorn, a Python WSGI HTTP Server, which provides a robust and efficient way to handle multiple requests.
+This Flask application is a simple, yet, comprehensive Web App for managing User Accounts and Posting Book-Related content. It allows users to Sign up, Log in, Create, Read, Update, and Delete posts about books, including Uploading Book picture Files. The application is Containerized using Docker, ensuring a Consistent and Isolated Runtime Environment. For production deployment, the application is served using Gunicorn, a Python WSGI HTTP Server, which provides a robust and efficient way to handle multiple requests.
 
 1. **User Authentication and Management**: 
    - Utilizes Flask-Login for handling User Authentication, Session Management, and Protecting Routes to ensure only Authenticated Users can access certain pages.
