@@ -2,7 +2,7 @@
 
 Welcome to our platform! This project was proudly initiated by a Brooklyn College alumnus.
 
-**Live**: [bookfinder](http://bookfinder.vladbortnik.dev)
+**Live**: [Student Book Exchange Platform](http://bookfinder.vladbortnik.dev)
 
 ## Our Mission
 
