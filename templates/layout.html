@@ -6,9 +6,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="{% block description %}Student Book Exchange Platform - Buy and sell textbooks directly with fellow students. Save money by avoiding expensive resellers. Fair prices, student-to-student marketplace for college textbooks.{% endblock %}">
+    <meta name="keywords" content="{% block keywords %}student textbooks, book exchange, college textbooks, buy textbooks, sell textbooks, student marketplace, affordable textbooks, used textbooks, Brooklyn College{% endblock %}">
+    <meta name="author" content="Vlad Bortnik">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{ request.url }}">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ request.url }}">
+    <meta property="og:title" content="{% block og_title %}{% block title %}{% endblock %}{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}Student Book Exchange Platform - Buy and sell textbooks directly with fellow students at fair prices.{% endblock %}">
+    <meta property="og:image" content="{% block og_image %}{{ url_for('static', filename='og-image.png', _external=True) }}{% endblock %}">
+    <meta property="og:site_name" content="Student Book Exchange Platform">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ request.url }}">
+    <meta name="twitter:title" content="{% block twitter_title %}{% block title %}{% endblock %}{% endblock %}">
+    <meta name="twitter:description" content="{% block twitter_description %}Student Book Exchange Platform - Buy and sell textbooks directly with fellow students.{% endblock %}">
+    <meta name="twitter:image" content="{% block twitter_image %}{{ url_for('static', filename='og-image.png', _external=True) }}{% endblock %}">
+    <meta name="twitter:creator" content="@vladbortnik_dev">
+
+    <!-- Structured Data - Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Student Book Exchange Platform",
+      "url": "http://bookfinder.vladbortnik.dev",
+      "description": "A direct marketplace where students can buy and sell textbooks to each other, eliminating expensive third-party resellers.",
+      "applicationCategory": "EducationalApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "creator": {
+        "@type": "Person",
+        "name": "Vlad Bortnik",
+        "url": "https://vladbortnik.dev"
+      }
+    }
+    </script>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
     <title>{% block title %}{% endblock %}</title>
+
+    <!-- Umami Analytics  -->
+    <script defer src="https://analytics.vladbortnik.dev/script.js" data-website-id="fd2ab2cc-0939-4964-9893-572ae1cc364f"></script>
 </head>
 
 <body>

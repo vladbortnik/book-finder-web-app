@@ -221,3 +221,70 @@ def delete_post(post_id):
     db.session.commit()
     flash('Your post has been deleted.', 'success')
     return redirect(url_for('index'))
+
+# ======= SEO ROUTES =======
+@app.route("/robots.txt")
+def robots_txt():
+    """Generate robots.txt for search engine crawlers"""
+    from flask import make_response
+    robots_content = """User-agent: *
+Allow: /
+Disallow: /account
+Disallow: /post/*/update
+Disallow: /post/*/delete
+Disallow: /signUp
+Disallow: /logIn
+Disallow: /logOut
+
+Sitemap: http://bookfinder.vladbortnik.dev/sitemap.xml
+"""
+    response = make_response(robots_content)
+    response.headers["Content-Type"] = "text/plain"
+    return response
+
+@app.route("/sitemap.xml")
+def sitemap_xml():
+    """Generate sitemap.xml for search engines"""
+    from flask import make_response
+    posts = Post.query.all()
+
+    sitemap_urls = []
+    # Static pages
+    sitemap_urls.append({
+        'loc': url_for('index', _external=True),
+        'lastmod': datetime.now().strftime('%Y-%m-%d'),
+        'changefreq': 'daily',
+        'priority': '1.0'
+    })
+    sitemap_urls.append({
+        'loc': url_for('about', _external=True),
+        'lastmod': datetime.now().strftime('%Y-%m-%d'),
+        'changefreq': 'monthly',
+        'priority': '0.8'
+    })
+
+    # Dynamic post pages
+    for post in posts:
+        sitemap_urls.append({
+            'loc': url_for('post', post_id=post.id, _external=True),
+            'lastmod': post.datePosted.strftime('%Y-%m-%d'),
+            'changefreq': 'monthly',
+            'priority': '0.6'
+        })
+
+    sitemap_xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
+    sitemap_xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+
+    for url_data in sitemap_urls:
+        sitemap_xml += '  <url>\n'
+        sitemap_xml += f'    <loc>{url_data["loc"]}</loc>\n'
+        sitemap_xml += f'    <lastmod>{url_data["lastmod"]}</lastmod>\n'
+        sitemap_xml += f'    <changefreq>{url_data["changefreq"]}</changefreq>\n'
+        sitemap_xml += f'    <priority>{url_data["priority"]}</priority>\n'
+        sitemap_xml += '  </url>\n'
+
+    sitemap_xml += '</urlset>'
+
+    response = make_response(sitemap_xml)
+    response.headers["Content-Type"] = "application/xml"
+    return response

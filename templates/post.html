@@ -1,6 +1,10 @@
 {% extends "layout.html" %}
 
-{% block title %} Book Details | Book Finder {% endblock %}
+{% block title %}{{ post.title }} | Student Book Exchange{% endblock %}
+
+{% block description %}{{ post.title }} - {{ post.department }} textbook available for exchange. Posted by {{ post.author.firstName }}. Contact for details and pricing.{% endblock %}
+
+{% block keywords %}{{ post.title }}, {{ post.department }} textbook, buy {{ post.title }}, sell textbooks, student book exchange{% endblock %}
 
 {% block content %}
 <article class="media content-section" style="margin-top:20px;">

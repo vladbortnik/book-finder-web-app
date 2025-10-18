@@ -5,6 +5,9 @@
 
 # Personal folders
 .info/
+.claude/
+.idea/
+.qodo/
 
 # macOS metadata files
 ._*
